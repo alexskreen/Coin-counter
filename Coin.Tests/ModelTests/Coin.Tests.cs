@@ -43,9 +43,49 @@ namespace Coin.TestTools
         [TestMethod]
         public void AllCheck_CountingCoinIncrements_True()
         {
-            UserInput newInput = new UserInput(99);
+            UserInput newInput = new UserInput(8166);
             newInput.AllCheck();
-            List<string> tempList = new List<string>{"a quarter", "a quarter", "a quarter", "a dime", "a dime", "a penny", "a penny", "a penny", "a penny"};
+            List<string> tempList = new List<string>{"a fifty", "a twenty", "a ten", "a dollar", "a quarter", "a quarter", "a dime", "a nickel", "a penny"};
+            CollectionAssert.AreEqual(tempList, newInput.CoinList);
+        }
+        [TestMethod]
+        public void AllCheck_CountingDollarIncrements_True()
+        {
+            UserInput newInput = new UserInput(149);
+            newInput.DollarCheck();
+            List<string> tempList = new List<string>{"a dollar"};
+            CollectionAssert.AreEqual(tempList, newInput.CoinList);
+        }
+        [TestMethod]
+        public void AllCheck_CountingFiveDollarIncrements_True()
+        {
+            UserInput newInput = new UserInput(510);
+            newInput.FiveDollarCheck();
+            List<string> tempList = new List<string>{"a five"};
+            CollectionAssert.AreEqual(tempList, newInput.CoinList);
+        }
+        [TestMethod]
+        public void AllCheck_CountingTenDollarIncrements_True()
+        {
+            UserInput newInput = new UserInput(1010);
+            newInput.TenDollarCheck();
+            List<string> tempList = new List<string>{"a ten"};
+            CollectionAssert.AreEqual(tempList, newInput.CoinList);
+        }
+        [TestMethod]
+        public void AllCheck_CountingTwentyDollarIncrements_True()
+        {
+            UserInput newInput = new UserInput(2010);
+            newInput.TwentyDollarCheck();
+            List<string> tempList = new List<string>{"a twenty"};
+            CollectionAssert.AreEqual(tempList, newInput.CoinList);
+        }
+        [TestMethod]
+        public void AllCheck_CountingFiftyDollarIncrements_True()
+        {
+            UserInput newInput = new UserInput(5010);
+            newInput.FiftyDollarCheck();
+            List<string> tempList = new List<string>{"a fifty"};
             CollectionAssert.AreEqual(tempList, newInput.CoinList);
         }
     }

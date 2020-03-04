@@ -13,6 +13,46 @@ namespace Coin.Models
             TotalCost = totalCost;
             CoinList = new List<string>{};
         }
+        public void DollarCheck()
+        {
+            while (TotalCost > 100)
+            {
+                TotalCost -= 100;
+                CoinList.Add("a dollar");
+            }
+        }
+        public void FiveDollarCheck()
+        {
+            while (TotalCost > 500)
+            {
+                TotalCost -= 500;
+                CoinList.Add("a five");
+            }
+        }
+        public void TenDollarCheck()
+        {
+            while (TotalCost > 1000)
+            {
+                TotalCost -= 1000;
+                CoinList.Add("a ten");
+            }
+        }
+        public void TwentyDollarCheck()
+        {
+            while (TotalCost > 2000)
+            {
+                TotalCost -= 2000;
+                CoinList.Add("a twenty");
+            }
+        }
+        public void FiftyDollarCheck()
+        {
+            while (TotalCost > 5000)
+            {
+                TotalCost -= 5000;
+                CoinList.Add("a fifty");
+            }
+        }
 
         public void QuarterCheck()
         {
@@ -48,6 +88,11 @@ namespace Coin.Models
         }
         public void AllCheck()
         {
+            FiftyDollarCheck();
+            TwentyDollarCheck();
+            TenDollarCheck();
+            FiveDollarCheck();
+            DollarCheck();
             QuarterCheck();
             DimeCheck();
             NickelCheck();
